@@ -57,7 +57,7 @@ public class RoomDetails implements RoomBillComponent{
 			return true;
 		}
 		else {
-			System.out.println("The No of Days of Accomodation should be between 1 to 15");
+			System.out.println("\nThe No of Days of Accomodation should be between 1 to 15!");
 			return false;
 		}
 	}
@@ -65,35 +65,35 @@ public class RoomDetails implements RoomBillComponent{
 	public boolean validateNoOfExtraPerson(int noOfExtraPersons) {
 		
 		if(noOfExtraPersons > 2 ) {
-			System.out.println("More than 2 extra persons not allowed per room");
-			return true;
+			System.out.println("\nMore than 2 extra persons not allowed per room!");
+			return false;
 		}
 		else 
-		return false;
+		return true;
 	}
 	
 	public boolean validateTypeOfRoom(String typeOfRoom) {
 		
 		if("Standard".compareToIgnoreCase(typeOfRoom) == 0) {
-			System.out.println("The room type is Standard ");
+			System.out.println("\nThe room type is Standard ");
 			return true;
 		}
 		else if("Deluxe".compareToIgnoreCase(typeOfRoom)== 0) {
-			System.out.println("The room type is Deluxe ");
+			System.out.println("\nThe room type is Deluxe ");
 			return true;
 		}
 		else if("Cottage".compareToIgnoreCase(typeOfRoom)== 0) {
-			System.out.println("The room type is Cottage ");
+			System.out.println("\nThe room type is Cottage ");
 			return true;
 		}
 		else {
-			System.out.println("The room type selected is not valid ");
+			System.out.println("\nThe room type selected is not valid !");
 			return false;
 		}
 		
 	}
 	
-	public float calculateBill(String typeOfRoom,int noOfDaysOfStay,int noOfExtraPersons) {
+	public float calculateBill() {
 		
 		float totalBill = 0;
 		
