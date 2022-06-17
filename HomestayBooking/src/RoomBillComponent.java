@@ -5,5 +5,5 @@ public interface RoomBillComponent {
 	public double extra_person_charge = 500.0;
 	public double food_charge = 800.0;
 	
-	public float calculateBill();
+	public float calculateBill(String typeOfRoom,int noOfDaysOfStay,int noOfExtraPersons);
 }

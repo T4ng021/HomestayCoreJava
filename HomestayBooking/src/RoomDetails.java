@@ -93,9 +93,31 @@ public class RoomDetails implements RoomBillComponent{
 		
 	}
 	
-	public float calculateBill() {
-		return 1.0f;
+	public float calculateBill(String typeOfRoom,int noOfDaysOfStay,int noOfExtraPersons) {
+		
+		float totalBill = 0;
+		
+		if(validateTypeOfRoom(typeOfRoom)) {
+			if(validateNoOfDaysOfStay(noOfDaysOfStay)) {
+				if(validateNoOfExtraPerson(noOfExtraPersons)) {
+					if("Standard".compareToIgnoreCase(typeOfRoom) == 0 ) {
+						totalBill = (float) ((noOfDaysOfStay*2500) +noOfDaysOfStay *( food_charge) +
+								(extra_person_charge* noOfExtraPersons));
+					}
+					if("Deluxe".compareToIgnoreCase(typeOfRoom) == 0 ) {
+						totalBill = (float) ((noOfDaysOfStay*3500) +noOfDaysOfStay *( food_charge) +
+								(extra_person_charge* noOfExtraPersons));
+					}
+					if("Cottage".compareToIgnoreCase(typeOfRoom) == 0 ) {
+						totalBill = (float) ((noOfDaysOfStay*5500) +noOfDaysOfStay *( food_charge) +
+								(extra_person_charge* noOfExtraPersons));
+					}
+				}
+			}
+		}
+		
+		totalBill = (float) (totalBill + totalBill*tax);
+		return totalBill;
 	}
-	
 	
 }
